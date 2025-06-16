@@ -13,12 +13,16 @@ class DatabaseSeeder extends Seeder
      */
     public function run(): void
     {
+       $this->call(ManagerSeeder::class); 
         User::factory(10)->create();
 
-        User::factory()->create([
-            'name' => 'Test User',
-            'gender' => 'Test Gender',
-            'email' => 'test@example.com',
-        ]);
+       User::updateOrCreate(
+    ['email' => 'test@example.com'], // Search condition
+    [
+        'name' => 'Test User',
+        'gender' => 'Test Gender',
+        'password' => bcrypt('password123'), // Add password if needed
+    ]
+);
     }
 }

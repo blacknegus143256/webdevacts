@@ -52,3 +52,7 @@
     </tr>
     @endforeach
 </table>
+<form method="POST" action="{{ route('manager.logout') }}">
+    @csrf
+    <button type="submit">Logout</button>
+</form>
