@@ -14,7 +14,7 @@
         </div>
     @endif
 
-    <form method="POST" action="{{ route('manager.login') }}">
+    <form method="POST" action="{{ route('manager.login.submit') }}">
         @csrf
         <label>Email:</label>
         <input type="email" name="email"><br>
@@ -24,5 +24,9 @@
 
         <button type="submit">Login</button>
     </form>
+    <a href="{{ route('manager.register') }}">
+    <button type="button">Register as Manager</button>
+</a>
+
 </body>
 </html>
